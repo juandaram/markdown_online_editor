@@ -1,161 +1,176 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>Complex Markdown Example</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>Complex Markdown Example</title>
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- KaTeX CSS for math rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
+    <!-- KaTeX CSS for math rendering -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+    />
 
-  <!-- KaTeX JS -->
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+    <!-- KaTeX JS -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/default.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
-  <!-- and it's easy to individually load additional languages -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/go.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/go.min.js"></script>
 
-  <style>
-    /* CSS styles for the content to mimic Tailwind classes */
-    #content h1 {
-      font-size: 2.25rem; /* Same as text-4xl */
-      font-weight: 700;   /* Same as font-bold */
-      margin-top: 2rem;   /* Same as mt-8 */
-      margin-bottom: 1rem; /* Same as mb-4 */
-    }
+    <style>
+      /* CSS styles for the content to mimic Tailwind classes */
+      #content h1 {
+        font-size: 2.25rem; /* Same as text-4xl */
+        font-weight: 700; /* Same as font-bold */
+        margin-top: 2rem; /* Same as mt-8 */
+        margin-bottom: 1rem; /* Same as mb-4 */
+      }
 
-    #content h2 {
-      font-size: 1.875rem; /* Same as text-3xl */
-      font-weight: 600;    /* Same as font-semibold */
-      margin-top: 1.5rem;  /* Same as mt-6 */
-      margin-bottom: 0.75rem; /* Same as mb-3 */
-    }
+      #content h2 {
+        font-size: 1.875rem; /* Same as text-3xl */
+        font-weight: 600; /* Same as font-semibold */
+        margin-top: 1.5rem; /* Same as mt-6 */
+        margin-bottom: 0.75rem; /* Same as mb-3 */
+      }
 
-    #content h3 {
-      font-size: 1.5rem; /* Same as text-2xl */
-      font-weight: 600;   /* Same as font-semibold */
-      margin-top: 1.25rem; /* Same as mt-5 */
-      margin-bottom: 0.5rem; /* Same as mb-2 */
-    }
+      #content h3 {
+        font-size: 1.5rem; /* Same as text-2xl */
+        font-weight: 600; /* Same as font-semibold */
+        margin-top: 1.25rem; /* Same as mt-5 */
+        margin-bottom: 0.5rem; /* Same as mb-2 */
+      }
 
-    #content h4{
-      font-size: 1.25rem; /* Same as text-2xl */
-      font-weight: 600;   /* Same as font-semibold */
-      margin-top: 1rem; /* Same as mt-5 */
-      margin-bottom: 0.3rem; /* Same as mb-2 */
-    }
-    #content p {
-      font-size: 1.125rem;  /* Same as text-lg */
-      line-height: 1.75rem; /* Same as leading-relaxed */
-      margin-bottom: 1rem;  /* Same as mb-4 */
-    }
+      #content h4 {
+        font-size: 1.25rem; /* Same as text-2xl */
+        font-weight: 600; /* Same as font-semibold */
+        margin-top: 1rem; /* Same as mt-5 */
+        margin-bottom: 0.3rem; /* Same as mb-2 */
+      }
+      #content p {
+        font-size: 1.125rem; /* Same as text-lg */
+        line-height: 1.75rem; /* Same as leading-relaxed */
+        margin-bottom: 1rem; /* Same as mb-4 */
+      }
 
-    #content ul{
+      #content ul {
         list-style-type: disc;
         margin-left: 2rem;
-        
-    }
-    #content blockquote {
-      font-style: italic;
-      border-left: 0.25rem solid #D1D5DB; /* Same as border-gray-300 */
-      padding-left: 1rem;
-      color: #6B7280; /* Same as text-gray-600 */
-      margin: 1rem 0;
-    }
+      }
+      #content blockquote {
+        font-style: italic;
+        border-left: 0.25rem solid #d1d5db; /* Same as border-gray-300 */
+        padding-left: 1rem;
+        color: #6b7280; /* Same as text-gray-600 */
+        margin: 1rem 0;
+      }
 
-    #content pre {
-      background-color: #F3F4F6; /* Same as bg-gray-100 */
-      padding: 1rem; /* Same as p-4 */
-      border-radius: 0.5rem; /* Same as rounded-lg */
-      overflow-x: auto;
-    }
+      #content pre {
+        background-color: #f3f4f6; /* Same as bg-gray-100 */
+        padding: 1rem; /* Same as p-4 */
+        border-radius: 0.5rem; /* Same as rounded-lg */
+        overflow-x: auto;
+      }
 
-    #content a {
-      color: #3B82F6; /* Same as text-blue-500 */
-      text-decoration: underline;
-    }
+      #content a {
+        color: #3b82f6; /* Same as text-blue-500 */
+        text-decoration: underline;
+      }
 
-    #content img {
-      max-width: 100%; /* Responsive images */
-      height: auto;
-      margin: 1rem 0;
-    }
+      #content img {
+        max-width: 100%; /* Responsive images */
+        height: auto;
+        margin: 1rem 0;
+      }
 
-    #content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-    }
+      #content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
 
-    #content th,
-    #content td {
-      border: 1px solid #D1D5DB; /* Same as border-gray-300 */
-      padding: 0.5rem;
-      text-align: left;
-    }
+      #content th,
+      #content td {
+        border: 1px solid #d1d5db; /* Same as border-gray-300 */
+        padding: 0.5rem;
+        text-align: left;
+      }
 
-    #content th {
-      background-color: #F3F4F6; /* Same as bg-gray-100 */
-    }
+      #content th {
+        background-color: #f3f4f6; /* Same as bg-gray-100 */
+      }
 
-    /* Additional styles for layout */
-    .container {
-      display: flex;
-      justify-content: space-between;
-      margin: 2rem auto;
-      max-width: 1200px;
-    }
+      /* Additional styles for layout */
+      .container {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem auto;
+        max-width: 1200px;
+      }
 
-    #markdown-input {
-      flex: 1;
-      padding: 1rem;
-      border: 1px solid #D1D5DB;
-      border-radius: 0.375rem; /* Same as rounded-md */
-      margin-right: 1rem;
-      resize: none; /* Disable resizing */
-      height: 400px; /* Set a fixed height */
-    }
+      #markdown-input {
+        flex: 1;
+        padding: 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.375rem; /* Same as rounded-md */
+        margin-right: 1rem;
+        resize: none; /* Disable resizing */
+        height: 400px; /* Set a fixed height */
+      }
 
-    button {
-      padding: 1rem 1.5rem;
-      background-color: #3B82F6; /* Same as bg-blue-500 */
-      color: white;
-      border: none;
-      border-radius: 0.375rem; /* Same as rounded-md */
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+      button {
+        padding: 1rem 1.5rem;
+        background-color: #3b82f6; /* Same as bg-blue-500 */
+        color: white;
+        border: none;
+        border-radius: 0.375rem; /* Same as rounded-md */
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
 
-    button:hover {
-      background-color: #2563EB; /* Same as bg-blue-600 */
-    }
+      button:hover {
+        background-color: #2563eb; /* Same as bg-blue-600 */
+      }
 
-    button:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Same as ring-2 ring-blue-500 */
-    }
-  </style>
-</head>
-<body class="bg-gray-100 text-gray-800">
-
-  <!-- Container for input, button, and content -->
-  <div class="container">
-    <textarea id="markdown-input" placeholder="Enter your markdown here..."></textarea>
-    <div class="w-1/2">
-      <button onclick="generate()" class="bg-blue-500 p-5 text-white hover:bg-blue-800">GENERATE</button>
-      <div id="content" class="max-w-3xl p-8 bg-white shadow-md rounded-lg mt-10"></div>
+      button:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Same as ring-2 ring-blue-500 */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Container for input, button, and content -->
+    <div class="container">
+      <textarea
+        id="markdown-input"
+        placeholder="Enter your markdown here..."
+      ></textarea>
+      <div class="w-1/2">
+        <button
+          onclick="generate()"
+          class="bg-blue-500 p-5 text-white hover:bg-blue-800"
+        >
+          GENERATE
+        </button>
+        <div
+          id="content"
+          class="max-w-3xl p-8 bg-white shadow-md rounded-lg mt-10"
+        ></div>
+      </div>
     </div>
-  </div>
 
-  <!-- Marked JS for Markdown parsing -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Marked JS for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <script>
-    let mytext = `
+    <script>
+      let mytext = `
 # Complex Markdown Example
 
 ## Introduction
@@ -224,51 +239,50 @@ console.log('Hello, world!');
 
 Here is a quadratic formula: $$ x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} $$
 
-And here is an inline equation: \\( E = mc^2 \\).
+And here is an inline equation: $E = mc^2$
 
 ## Conclusion
 
 This concludes the complex Markdown example. Feel free to explore Markdown for your documentation needs!
 `;
 
-    function generate() {
-      const myinput = document.getElementById('markdown-input');
-      mytext = myinput.value; 
-      console.log('Input:', mytext);
-      
-      // Parse Markdown and insert it into the page
-      document.getElementById('content').innerHTML = marked.parse(mytext);
-      
-      // Render KaTeX math expressions after the content is inserted
-      renderMathInElement(document.getElementById('content'), {
+      function generate() {
+        const myinput = document.getElementById("markdown-input");
+        mytext = myinput.value;
+        console.log("Input:", mytext);
+
+        // Parse Markdown and insert it into the page
+        document.getElementById("content").innerHTML = marked.parse(mytext);
+
+        // Render KaTeX math expressions after the content is inserted
+        renderMathInElement(document.getElementById("content"), {
+          delimiters: [
+            { left: "$$", right: "$$", display: true }, // for block math
+            { left: "\\(", right: "\\)", display: false }, // for inline math
+          ],
+        });
+
+        // Highlight all code blocks
+        hljs.highlightAll();
+      }
+
+      // Initial rendering of the example text
+      document.getElementById("content").innerHTML = marked.parse(mytext);
+
+      // Auto-render KaTeX math expressions after the content is inserted
+      // Auto-render KaTeX math expressions after the content is inserted
+      renderMathInElement(document.getElementById("content"), {
         delimiters: [
-          {left: "$$", right: "$$", display: true},  // for block math
-          {left: "\\(", right: "\\)", display: false} // for inline math
-        ]
+          { left: "$$", right: "$$", display: true }, // for block math
+          { left: "$", right: "$", display: false }, // for inline math
+        ],
       });
 
       // Highlight all code blocks
       hljs.highlightAll();
-    }
-    
-    
-    // Initial rendering of the example text
-    document.getElementById('content').innerHTML = marked.parse(mytext);
-    
-    // Auto-render KaTeX math expressions after the content is inserted
-    renderMathInElement(document.getElementById('content'), {
-      delimiters: [
-        {left: "$$", right: "$$", display: true},  // for block math
-        {left: "\\(", right: "\\)", display: false} // for inline math
-      ]
-    });
 
-    // Highlight all code blocks
-    hljs.highlightAll();
-
-    const myinput = document.getElementById('markdown-input');
-    myinput.value = mytext
-  </script>
-
-</body>
+      const myinput = document.getElementById("markdown-input");
+      myinput.value = mytext;
+    </script>
+  </body>
 </html>
